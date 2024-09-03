@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <title>{{title}}</title>
+{% endblock head %}
+
+{% block body %}
+
+   <span class='container'>
+    <div class='flashed'>
+    	{% for message in get_flashed_messages() %}
+    	<div class="alert alert-danger alert-dismissible fade show typing-animation" role="alert">
+    		<p class="typing-animation">
+    			{{message}}
+    		</p>
+    	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    	</button>
+    	</div>	
+    	{% endfor %}
+    </div>
+
+    <form class="row g-3" method=post>
+	    {{ form.hidden_tag() }}
+		<div class="mb-3">
+		{{form.card_number.label(class="form-label")}}
+		{{form.card_number(class="form-control", id="exampleFormControlInput1")}}
+		{% if form.card_number.errors %}
+		    {% for error in form.card_number.errors %}
+		        <p class="fw-lighter">{{error}}</p>
+		    {% endfor %}
+		{% endif %}
+		</div>
+		<div class="mb-3">
+		{{form.password.label(class="form-label")}}
+		{{form.password(class="form-control", id="exampleFormControlInput1")}}
+		{% if form.password.errors %}
+		    {% for error in form.password.errors %}
+		        <p class="fw-lighter">{{error}}</p>
+		    {% endfor %}
+		{% endif %}
+		</div>
+	    <div>
+		    {{form.submit(class="btn btn-outline-primary")}}
+		</div>
+	 </form>
+    </span>
+
+{% endblock body%}
+
+{% block footer %}
+{% endblock footer %}

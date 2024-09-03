@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block head %}
+	<title>{{title}}</title>
+{% endblock head %}
+
+{% block body %}
+<span class='container'>
+    <div class='flashed'>
+    	{% for message in get_flashed_messages() %}
+    	<div class="alert alert-info alert-dismissible fade show typing-animation" role="alert">
+    		<p class="typing-animation">
+    			{{message}}
+    		</p>
+    	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    	</button>
+    	</div>	
+    	{% endfor %}
+    </div>
+
+	  
+      <div class="col-md-12">
+        <center>
+			<a href="#">
+				<b>
+					<img height=68% width=68% alt="Digital read logo" class="img-fluid rounded typing-animation" src="{{url_for('static', filename='images/digital_read.png')}}">
+				</b>
+			</a>
+		</center>
+      </div>
+      
+
+{% endblock body %}
