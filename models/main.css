@@ -1,0 +1,111 @@
+body{
+    font-family: Arial;
+  	background-image: url('#');
+  	background-repeat: no-repeat;
+	background: linear-gradient(135deg, #0097a7, purple); /* Reverse gradient on hover */
+	color:white;
+	background-color: white; /* Default Light Mode */
+	color: black;
+    transition: background-color 0.5s, color 0.5s;
+    }
+hr{
+	color:white;
+	height:10px;
+}
+
+
+/*bliking cursor for welcome page*/
+    /* Keyframes for typing animation */
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+/* Animation for typing effect */
+.typing-animation {
+    overflow: hidden; /* Ensures the text remains in one line */
+    /*border-right: .13em solid white; /* Creates the typing cursor effect */
+	white-space: nowrap; /* Ensures the text does not wrap */
+    margin: 0; /* Removes any margin for better alignment */
+	letter-spacing: .0em; /* Adjust spacing between letters */
+    animation: typing 3s steps(40, end), blink-caret .75s step-end infinite; /* Defines the typing animation */
+    }
+
+.flash_primary{
+    background: linear-gradient(135deg, #FF4066, FFF16A);
+    /*height: 100vh;*/
+    margin: 0;
+}
+
+.flash_info{
+    background: linear-gradient(135deg, #6157FF, #EE49FD);
+    /*height: 100vh;*/
+    margin: 0;
+}
+
+/* success Button styling */
+.btn_success {
+    background: linear-gradient(to right, #6157FF, #EE49FD); /* Gradient colors */
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Hover effect */
+.btn_success:hover {
+    background: linear-gradient(to right, #EE49FD, #6157FF); /* Reverse gradient on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    transform: translateY(-3px); /* Lift the button slightly */
+}
+
+/* information Button styling */
+.btn_info {
+    background: linear-gradient(to right, #FF7E5F, #FEB47B); /* Gradient colors */
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Hover effect */
+.btn_info:hover {
+    background: linear-gradient(to right, #FEB47B, #FF7E5F); /* Reverse gradient on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    transform: translateY(-3px); /* Lift the button slightly */
+}
+
+/* information Button styling */
+.btn_cancel {
+    background: linear-gradient(135deg, #0097a7, purple); /* Gradient colors */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+/* Hover effect */
+.btn_cancel:hover {
+    background: linear-gradient(135deg, purple, #0097a7); /* Reverse gradient on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+    transform: translateY(-3px); /* Lift the button slightly */
+}

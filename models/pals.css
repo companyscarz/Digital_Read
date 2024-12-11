@@ -1,0 +1,133 @@
+.chat-container {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.login-container {
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.chat-messages {
+  height: 300px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+  /*border:;*/
+}
+
+.chat-message.user {
+  text-align: right;
+}
+
+.chat-input {
+  padding: 10px;
+}
+
+.chat-input textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.chat-input button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+
+/* General Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.chat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 20px;
+  /*background-color: #f0f0f0; */
+}
+
+/* Message Styles */
+.message {
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+	
+}
+
+.received {
+  background-color: #e0e0e0;
+  text-align: left;
+}
+
+.sent {
+  background-color: #d0d0d0;
+  text-align: right;
+}
+
+/* Futuristic Elements */
+.message:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.message p {
+  margin: 0;
+}
+
+/* Dark Mode (Optional) */
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+  .message {
+    background-color: #333;
+  }
+  .received {
+    background-color: #444;
+  }
+  .sent {
+    background-color: #555;
+  }
+}
+
+
+#myTextarea {
+  	width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: vertical; 
+    box-sizing: border-box; 
+    font-family: sans-serif; 
+    font-size: 16px;
+	/*border-color: #999;*/
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navigation{
+	width: 70%;
+  	margin: 0 auto;
+  	border-radius: 5px;
+}
+
+.limits{
+	width: 70%;
+  	margin: 0 auto;
+  	border-radius: 5px;
+}
