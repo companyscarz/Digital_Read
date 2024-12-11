@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <title>{{title}}</title>
+	<link href="{{url_for('static', filename='css/pals.css')}}" rel="stylesheet">
+{% endblock head %}
+
+{% block body %}
+
+    <div class='flashed container'>
+    	{% for message in get_flashed_messages() %}
+    	<div class="alert alert-danger alert-dismissible fade show typing-animation" role="alert">
+    		<p class="typing-animation">
+    			{{message}}
+    		</p>
+    	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+    	</button>
+    	</div>	
+    	{% endfor %}
+    </div>
+
+<span class='container col-xl-10 col-xxl-8 px-4 py-5'>
+    <form class="login-container" method=post>
+	    {{ form.hidden_tag() }}
+		<div class="mb-3">
+		{{form.card_number.label(class="form-label")}}
+		{{form.card_number(class="form-control", id="exampleFormControlInput1")}}
+			
+		<!--get the pals_name and pals_image that the user will be using for the current
+			session and also will these will be used in the pals and store them in a session-->
+		{% if form.card_number.errors %}
+		    {% for error in form.card_number.errors %}
+		        <p class="fw-lighter">{{error}}</p>
+		    {% endfor %}
+		{% endif %}
+		</div>
+		<div class="mb-3">
+		{{form.password.label(class="form-label")}}
+		{{form.password(class="form-control", id="exampleFormControlInput1")}}
+		{% if form.password.errors %}
+		    {% for error in form.password.errors %}
+		        <p class="fw-lighter">{{error}}</p>
+		    {% endfor %}
+		{% endif %}
+		</div>
+	    <div>
+		    {{form.submit(class="btn btn-outline-primary btn_cancel")}}
+		</div>
+		<hr class="my-4">
+        <small class="text-muted">By clicking Grant Access, you agree to the terms of use.</small>
+
+	 </form>
+</span>
+
+{% endblock body%}
+
+{% block footer %}
+{% endblock footer %}
