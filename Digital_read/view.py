@@ -17,7 +17,7 @@ def View():
     cleanup_online_tb()
     if 'card_num' and 'card_code' in session:
     	if active_cardnum in magazine_stocks and magazine_stocks[active_cardnum]== active_cardcode:
-    		flash("Welcome to the digital magazine!")
+    		#flash("Welcome to the digital magazine!")
     		return render_template('view.html', title=title)
     	else:
     		flash("Unknown card!")
