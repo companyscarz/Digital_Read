@@ -109,3 +109,11 @@ hr{
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
     transform: translateY(-3px); /* Lift the button slightly */
 }
+
+/* Disable text selection */
+iframe {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+	user-select: none;
+}
