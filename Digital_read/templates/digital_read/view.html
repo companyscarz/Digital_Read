@@ -1,16 +1,6 @@
 {% extends 'layout.html' %}
 {% block head %}
 	<title>{{title}}</title>
-	<style>
-		
-        /* Disable text selection */
-        iframe {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-    </style>
 {% endblock head %}
 
 {% block body %}
@@ -19,8 +9,8 @@
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{{ url_for('view_bp.View') }}">
                     <b>
-						<p>Library</p>
-					</b>
+			<p>Library</p>
+			</b>
                 </a>
             </li>
             <li class="nav-item">
@@ -50,10 +40,10 @@
 <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
-		<p class="muted">Divinity</p>
-		
-		<iframe src="https://drive.google.com/file/d/14-hgfdnnk7NeLy-d9QKT9--fpFrhC7lN/view?usp=sharing" height=100% class="d-block w-100" alt="..."></iframe>
+	<div id="pdf-container">
+		<h3 class="mute">Religion</h3>
 		<iframe src="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true" height=100% class="d-block w-100" alt="..."></iframe>
+	</div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
