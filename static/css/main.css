@@ -119,7 +119,20 @@ iframe {
 }
 
 #pdf-container {
-	width: 600px; /* Adjust width as needed */
+      width: 600px; /* Adjust width as needed */
       height: 800px; /* Adjust height as needed */
       border: 1px solid #ccc;
       margin: 20px auto;
+}
+
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust to desired height */
+  }
+
+  .pdf-frame {
+    max-width: 80%; /* Adjust to desired max width */
+    max-height: 80%; /* Adjust to desired max height */
+  }
