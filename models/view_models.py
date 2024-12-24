@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from flask import flash, session, redirect, url_for
 from apscheduler.schedulers.background import BackgroundScheduler
 from delicate import connection
+import psycopg2
 import webbrowser
 
 current_time = datetime.utcnow()
@@ -22,10 +23,15 @@ def cleanup_online_tb():
         conn.commit() 
         conn.close()
         print("online_tb Cleared")
-        #if there is an error in the database then flash a message
-    except Error as e:
+        #if there is an error in the database then  close the database and flash a message
+    except psycopg2.OperationalError as e:
         conn.commit()
         conn.close()
+        flash("Connection error:", e)
+    except psycopg2.ProgrammingError as e:
+        conn.commit()
+        conn.close()
+        flash("Database operation error:", e)
 
 
 scheduler = BackgroundScheduler()
@@ -135,8 +141,12 @@ class CArds():
        							         
             conn.commit() 
             conn.close() 
-		            #if there is an error in the database then flash a message
-        except Error as e:
-        	conn.commit()
-        	conn.close()
-        	flash(f"⚠An Error occured{e}") 
+#if there is an error in the database then close database and flash a message
+    except psycopg2.OperationalError as e:
+        conn.commit()
+        conn.close()
+        flash("Connection error:", e)
+    except psycopg2.ProgrammingError as e:
+        conn.commit()
+        conn.close()
+        flash("Database operation error:", e)
