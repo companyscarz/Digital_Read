@@ -14,8 +14,8 @@ def cleanup_online_tb():
         conn = connections
         cur = conn.cursor()
         cur.execute(""" CREATE TABLE if not exists online_tb (
-		                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
-		                               Card_num TEXT,
+		                               Id SERIAL PRIMARY KEY,
+		                               Card_num VARCHAR (20) NOT NULL,
 		                               Created_at DATETIME
 		                               )""")
         cur.execute(""" DELETE FROM online_tb WHERE Created_at <? """,(relax_time,))
@@ -48,8 +48,8 @@ class CArds():
             conn = connections
             cur = conn.cursor()
             cur.execute(""" CREATE TABLE if not exists online_tb (
-		                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
-		                               Card_num TEXT,
+		                               Id SERIAL PRIMARY KEY,
+		                               Card_num VARCHAR (20) NOT NULL,
 		                               Created_at DATETIME
 		                               )""")  
             
@@ -67,9 +67,9 @@ class CArds():
 	            conn = connections
 	            cur = conn.cursor()
 	            cur.execute(""" CREATE TABLE if not exists card_db (
-		                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
-		                               Card_num TEXT,
-		                               Card_code TEXT, 
+		                               Id SERIAL PRIMARY KEY,
+		                               Card_num VARCHAR (20) NOT NULL,
+		                               Card_code VARCHAR (20) NOT NULL, 
 		                               Created_at DATETIME
 		                               )""")
 		       
@@ -91,8 +91,8 @@ class CArds():
 		            	session['card_code']=self.card_code
 		            	#after saving on session then add the card_num to online_tb
 		            	cur.execute(""" CREATE TABLE if not exists online_tb (
-			                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
-			                               Card_num TEXT,
+			                               Id SERIAL PRIMARY KEY,
+			                               Card_num VARCHAR (20) NOT NULL,
 			                               Created_at DATETIME
 			                               )""")
 		            	data = [self.card_num, self.created_at]
@@ -104,9 +104,9 @@ class CArds():
 		            #if card is not registered then save it on cards data base
 	            	else: 
 		            	cur.execute(""" CREATE TABLE if not exists card_db (
-			                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
-			                               Card_num TEXT,
-			                               Card_code TEXT, 
+			                               Id SERIAL PRIMARY KEY,
+			                               Card_num VARCHAR (20) NOT NULL,
+			                               Card_code VARCHAR (20) NOT NULL, 
 			                               Created_at DATETIME
 			                               )""")
 		            	data = [self.card_num, self.card_code, self.created_at]
@@ -120,8 +120,8 @@ class CArds():
 		            	session['card_code']=self.card_code
 		            	#after saving on session then add the card_num to online_tb
 		            	cur.execute(""" CREATE TABLE if not exists online_tb (
-			                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
-			                               Card_num TEXT,
+			                               Id SERIAL PRIMARY KEY,
+			                               Card_num VARCHAR (20) NOT NULL,
 			                               Created_at DATETIME
 			                               )""")
 		            	data = [self.card_num, self.created_at]
