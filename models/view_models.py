@@ -14,11 +14,6 @@ def cleanup_online_tb():
         relax_time = (current_time - timedelta(minutes=1)).strftime('%Y-%m-%d %H:%M:%S') 
         conn = connections
         cur = conn.cursor()
-        cur.execute(""" CREATE TABLE if not exists online_tb (
-		                               Id SERIAL PRIMARY KEY,
-		                               Card_num VARCHAR (20) NOT NULL,
-		                               Created_at DATETIME
-		                               )""")
         cur.execute(""" DELETE FROM online_tb WHERE Created_at <%s """,(relax_time,))
         conn.commit() 
         conn.close()
