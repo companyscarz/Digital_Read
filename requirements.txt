@@ -63,6 +63,8 @@ pyserial==3.5
 python-dateutil==2.9.0.post0
 python-dotenv==0.21.1
 python-magic==0.4.27
+psycopg2
+webbrowser
 pytz==2024.1
 ratelim==0.1.6
 requests==2.31.0
