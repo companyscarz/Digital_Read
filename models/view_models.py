@@ -1,18 +1,17 @@
-import sqlite3
-from sqlite3 import Error
 from datetime import datetime, timedelta
 from flask import flash, session, redirect, url_for
 from apscheduler.schedulers.background import BackgroundScheduler
+from delicate import connection
 import webbrowser
 
 current_time = datetime.utcnow()
-
+connections = connection
 
 def cleanup_online_tb():
     try:
         #get the session data and delete it if its 30 minutes
         relax_time = (current_time - timedelta(minutes=1)).strftime('%Y-%m-%d %H:%M:%S') 
-        conn = sqlite3.connect('Digital_read.db')
+        conn = connections
         cur = conn.cursor()
         cur.execute(""" CREATE TABLE if not exists online_tb (
 		                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,7 +45,7 @@ class CArds():
         try: 
         #check online_tb if card is there then flash card is in use 
         #if card is not there then proceed to other authorisation steps
-            conn = sqlite3.connect('Digital_read.db')
+            conn = connections
             cur = conn.cursor()
             cur.execute(""" CREATE TABLE if not exists online_tb (
 		                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -65,7 +64,7 @@ class CArds():
 	            nine_weeks_ago = (current_time - timedelta(weeks=9)).strftime('%Y-%m-%d %H:%M:%S')
 				
 	            #make connections 
-	            conn = sqlite3.connect('Digital_read.db')
+	            conn = connections
 	            cur = conn.cursor()
 	            cur.execute(""" CREATE TABLE if not exists card_db (
 		                               Id INTEGER PRIMARY KEY AUTOINCREMENT,
