@@ -19,19 +19,16 @@ def cleanup_online_tb():
 		                               Card_num VARCHAR (20) NOT NULL,
 		                               Created_at DATETIME
 		                               )""")
-        cur.execute(""" DELETE FROM online_tb WHERE Created_at <? """,(relax_time,))
+        cur.execute(""" DELETE FROM online_tb WHERE Created_at <%s """,(relax_time,))
         conn.commit() 
         conn.close()
         print("online_tb Cleared")
         #if there is an error in the database then  close the database and flash a message
-    except psycopg2.OperationalError as e:
-        conn.commit()
-        conn.close()
-        flash("Connection error:", e)
-    except psycopg2.ProgrammingError as e:
-        conn.commit()
-        conn.close()
-        flash("Database operation error:", e)
+    except (psycopg2.OperationalError, psycopg2.ProgrammingError) as e:
+        conn.rollback()
+	flash("Database error:", e)
+    finally:
+	    conn.close()
 
 
 scheduler = BackgroundScheduler()
@@ -60,7 +57,7 @@ class CArds():
 		                               )""")  
             
             #query to check if card exists in the online table
-            cur.execute("""SELECT * FROM online_tb WHERE Card_num = ?""", (self.card_num,))
+            cur.execute("""SELECT * FROM online_tb WHERE Card_num = %s""", (self.card_num,))
             # query to get card if the card_num exists 
             card_online = cur.fetchone()
             if card_online:
@@ -80,7 +77,7 @@ class CArds():
 		                               )""")
 		       
 	            #query to check if card exists but if the date created is older than 9 weeks this one should not be allowed
-	            cur.execute("""SELECT * FROM card_db WHERE Card_num = ? AND Created_at < ?""", (self.card_num,nine_weeks_ago))                        
+	            cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Created_at < %s""", (self.card_num,nine_weeks_ago))                        
 		   	# query to check if the card_num exists and not check expiry
 	            expired_card = cur.fetchone()
 	            
@@ -89,7 +86,7 @@ class CArds():
 	            	flash("Sorry, this card is expired!")
 	            else:
 	            	# Check if the card is valid (not expired)
-	            	cur.execute("""SELECT * FROM card_db WHERE Card_num = ? AND Card_code = ?""", (self.card_num, self.card_code))
+	            	cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Card_code = %s""", (self.card_num, self.card_code))
 	            	valid_card = cur.fetchone()     	
 		            #when card is registered then save in session, continue to view page then save on online_tb
 	            	if valid_card: # when a result is found 
@@ -103,7 +100,7 @@ class CArds():
 			                               )""")
 		            	data = [self.card_num, self.created_at]
 		            	cur.execute(""" 
-			                                	INSERT INTO online_tb(Card_num,Created_at) VALUES(?,?)
+			                                	INSERT INTO online_tb(Card_num,Created_at) VALUES(%s,%s)
 			            				""", data)
 		            	flash("Welcome back to Digital read")
 		            	
@@ -118,7 +115,7 @@ class CArds():
 		            	data = [self.card_num, self.card_code, self.created_at]
 		            	#register the card on the card_db
 		            	cur.execute(""" 
-			                                	INSERT INTO card_db(Card_num, Card_code, created_at) VALUES(?,?,?)
+			                                	INSERT INTO card_db(Card_num, Card_code, created_at) VALUES(%s,%s,%s)
 			            				""", data)
 			            				
 			        #add the card on the online table and save on session
@@ -132,7 +129,7 @@ class CArds():
 			                               )""")
 		            	data = [self.card_num, self.created_at]
 		            	cur.execute(""" 
-			                                	INSERT INTO online_tb(Card_num, Created_at) VALUES(?,?)
+			                                	INSERT INTO online_tb(Card_num, Created_at) VALUES(%s,%s)
 			            				""", data) 
 			            				
 		            	flash("Enjoy your say on Digital read.")
@@ -143,10 +140,6 @@ class CArds():
             conn.close() 
 #if there is an error in the database then close database and flash a message
     except psycopg2.OperationalError as e:
-        conn.commit()
-        conn.close()
         flash("Connection error:", e)
     except psycopg2.ProgrammingError as e:
-        conn.commit()
-        conn.close()
         flash("Database operation error:", e)
