@@ -139,7 +139,8 @@ class CArds():
             conn.commit() 
             conn.close() 
 #if there is an error in the database then close database and flash a message
-    except psycopg2.OperationalError as e:
-        flash("Connection error:", e)
-    except psycopg2.ProgrammingError as e:
-        flash("Database operation error:", e)
+    except (psycopg2.OperationalError, psycopg2.ProgrammingError) as e:
+        conn.rollback()
+	flash("Database error:", e)
+    finally:
+	    conn.close()
