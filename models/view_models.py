@@ -146,4 +146,5 @@ class CArds():
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
         finally:
-        	conn.close()
+        	pass
+        	#conn.close()
