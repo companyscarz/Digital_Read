@@ -1,4 +1,3 @@
-import sqlite3
 from datetime import datetime, timedelta
 from flask import flash, session, redirect, url_for
 from apscheduler.schedulers.background import BackgroundScheduler
