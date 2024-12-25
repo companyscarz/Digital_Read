@@ -28,7 +28,8 @@ def cleanup_online_tb():
     except Exception as e:
         flash(f"⚠An Error occured{e}")
     finally:
-        conn.close()
+        pass
+        #conn.close()
 
 
 scheduler = BackgroundScheduler()
