@@ -50,10 +50,9 @@ mypy-extensions==1.0.0
 mysql-connector==2.2.9
 packaging==23.1
 parso==0.8.3
+pg8000==1.31.2
 pkgconfig==1.5.5
 platformdirs==3.10.0
-psycopg2==2.9.5
-PyMySQL==1.0.2
 puremagic==1.14
 pybind11==2.11.1
 pycountry==23.12.11
