@@ -23,13 +23,12 @@ def cleanup_online_tb():
         cur.execute("""SELECT * FROM online_tb""")
         cur.execute(""" DELETE FROM online_tb WHERE Created_at < %s """,(relax_time,))
         conn.commit() 
-        #conn.close()
         print("online_tb Cleared")
         #if there is an error in the database then flash a message
     except Exception as e:
         flash(f"⚠An Error occured{e}")
     finally:
-        pass
+        conn.close()
 
 
 scheduler = BackgroundScheduler()
@@ -141,11 +140,9 @@ class CArds():
 		            	#welcome the user          		
 			        #commit and save the changes and save changes
        							         
-            conn.commit() 
-            conn.close() 
+            conn.commit()  
 		            #if there is an error in the database then flash a message
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
         finally:
-		pass
-        	#conn.close()
+		conn.close()
