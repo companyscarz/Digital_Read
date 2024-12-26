@@ -23,7 +23,7 @@ def cleanup_online_tb():
         #cur.execute("""SELECT * FROM online_tb""")
         cur.execute("""DELETE FROM online_tb WHERE Created_at > %s""", (relax_time,))
         conn.commit()
-        webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")
+        #webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")
         flash("Session has ended.. Take time to relax.. then login back")
         #if there is an error in the database then flash a message
     except Exception as e:
