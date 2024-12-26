@@ -33,11 +33,6 @@ def cleanup_online_tb():
         #conn.close()
 
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(cleanup_online_tb, 'interval', minutes=1)
-scheduler.start()
-print ('online db cleared')
-
 #during expansion add  account table and link it to the card table. 
 #on the card table you will add columns of pdf 
 #Digital_read database
