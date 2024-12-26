@@ -6,9 +6,9 @@
 {% block body %}
 
 
-<nav class="navbar fixed-top bg-body-tertiary fixed-top">
+<nav style="color: gray;" class="navbar fixed-top bg-body-tertiary fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Offcanvas navbar</a>
+    <h2 style="color: white;" class="navbar-brand" href="#">Offcanvas navbar</h2>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -58,6 +58,7 @@
   </div>
 </nav>
 
+<br>
 	<span class='container'>
 	    <div class='flashed'>
 	    	{% for message in get_flashed_messages() %}
