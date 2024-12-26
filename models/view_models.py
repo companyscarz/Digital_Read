@@ -12,7 +12,7 @@ connections = connection
 def cleanup_online_tb():
     try:
         #get the session data and delete it if its 30 minutes
-        relax_time = (current_time - timedelta(minutes=1)).strftime('%Y-%m-%d %H:%M:%S') 
+        relax_time = (current_time - timedelta(minutes=2)).strftime('%Y-%m-%d %H:%M:%S') 
         conn = connections
         cur = conn.cursor()
         cur.execute(""" CREATE TABLE if not exists online_tb (
@@ -22,8 +22,9 @@ def cleanup_online_tb():
 		                               )""")
         cur.execute("""SELECT * FROM online_tb""")
         cur.execute(""" DELETE FROM online_tb WHERE Created_at < %s """,(relax_time,))
-        conn.commit() 
-        print("online_tb Cleared")
+        conn.commit()
+        return redirect(url_for("authorisation_bp.Authorisation"))
+        flash("Session has ended.. Take time to relax.. then login back")
         #if there is an error in the database then flash a message
     except Exception as e:
         flash(f"⚠An Error occured{e}")
@@ -33,7 +34,7 @@ def cleanup_online_tb():
 
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(cleanup_online_tb, 'interval', hours=1)
+scheduler.add_job(cleanup_online_tb, 'interval', minutes=1)
 scheduler.start()
 print ('online db cleared')
 
