@@ -29,7 +29,9 @@ def cleanup_online_tb():
     except Exception as e:
         flash(f"⚠An Error occured{e}")
     finally:
-        pass
+        if (conn):
+		cur.close()
+		conn.close()
         #conn.close()
 
 
@@ -143,7 +145,9 @@ class CArds():
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
         finally:
-        	pass
+        	if (conn):
+			cur.close()
+			conn.close()
         	#conn.close()
 
 scheduler = BackgroundScheduler()
