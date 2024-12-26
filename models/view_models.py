@@ -144,6 +144,3 @@ class CArds():
         finally:
         	pass
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(cleanup_online_tb, 'interval', seconds=1)
-scheduler.start()
