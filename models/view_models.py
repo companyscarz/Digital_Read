@@ -29,10 +29,7 @@ def cleanup_online_tb():
     except Exception as e:
         flash(f"⚠An Error occured{e}")
     finally:
-        if (conn):
-		cur.close()
-		conn.close()
-        #conn.close()
+	    pass
 
 
 #during expansion add  account table and link it to the card table. 
@@ -145,10 +142,7 @@ class CArds():
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
         finally:
-        	if (conn):
-			cur.close()
-			conn.close()
-        	#conn.close()
+		pass
 
 scheduler = BackgroundScheduler()
 scheduler.add_job(cleanup_online_tb, 'interval', minutes=1)
