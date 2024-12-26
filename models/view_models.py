@@ -67,8 +67,8 @@ class CArds():
             if card_online:
             	flash("This card is currently in use!")
             else:
-	            #check for objects older than 9 weeks 
-	            nine_weeks_ago = (current_time - timedelta(weeks=9)).strftime('%Y-%m-%d %H:%M:%S')
+	            #check for objects older than 1 month + bonus week--> 5 weeks
+	            nine_weeks_ago = (current_time - timedelta(weeks=5)).strftime('%Y-%m-%d %H:%M:%S')
 				
 	            #make connections 
 	            conn = connections
@@ -86,7 +86,7 @@ class CArds():
 		   	# query to check if the card_num exists and not check expiry
 	            expired_card = cur.fetchone()
 	            
-	            # if the card is older than 15 weeks then dont allow in any enty 
+	            # if the card is older than 5 weeks then dont allow in any enty 
 	            if expired_card :
 	            	flash("Sorry, this card is expired!")
 	            else:
@@ -98,7 +98,7 @@ class CArds():
 	            	if valid_card: # when a result is found 
 		            	session['card_num']=self.card_num
 		            	session['card_code']=self.card_code
-		            	#after saving on session then add the card_num to online_tb
+		            	#after saving on session then add the card_num to online_tb and continue to view page
 		            	cur.execute(""" CREATE TABLE if not exists online_tb (
 			                               Id SERIAL PRIMARY KEY,
 			                               Card_num TEXT,
@@ -109,8 +109,8 @@ class CArds():
 			                                	INSERT INTO online_tb(Card_num,Created_at) VALUES(%s,%s)
 			            				""", data)
 		            	flash("Welcome back to Digital read")
-		            	
-		            #if card is not registered then save it on cards data base
+		            	return redirect(url_for("view_bp.View"))
+		            #if card is not registered then save it on cards data base and continue to view page
 	            	else: 
 		            	cur.execute(""" CREATE TABLE if not exists card_db (
 			                               Id SERIAL PRIMARY KEY,
@@ -139,6 +139,7 @@ class CArds():
 			            				""", data) 
 			            				
 		            	flash("Enjoy your say on Digital read.")
+		            	return redirect(url_for("view_bp.View"))
 		            	#welcome the user          		
 			        #commit and save the changes and save changes
        							         
