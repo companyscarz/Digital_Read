@@ -8,6 +8,9 @@ body{
 	color: black;
     transition: background-color 0.5s, color 0.5s;
     }
+html{
+	scroll-behavior: smooth;
+}
 hr{
 	color:white;
 	height:10px;
@@ -136,3 +139,8 @@ iframe {
     max-width: 80%; /* Adjust to desired max width */
     max-height: 80%; /* Adjust to desired max height */
   }
+#marquee-container {
+  width: 300px; /* Adjust width as needed */
+  overflow-x: auto;
+  white-space: nowrap;
+}
