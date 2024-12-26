@@ -4,30 +4,53 @@
 {% endblock head %}
 
 {% block body %}
-	<nav class="container navbar">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#religion">
-                    <button type="button" class="btn btn-secondary">Religion</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#physics">
-                    <button type="button" class="btn btn-secondary">Physics</button>
-                </a>
-            </li><li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#mathematics">
-                    <button type="button" class="btn btn-secondary">Mathematics</button>
-                </a>
-            </li><li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#languages">
-                    <button type="button" class="btn btn-secondary">Languages</button>
-                </a>
-            </li><li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#ict">
-                    <button type="button" class="btn btn-secondary">ICT</button>
-                </a>
-            </li><li class="nav-item">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#religion">Religion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#physics">Physics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#mathematics">Mathematics</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#languages">Languages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#ict">ICT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#history">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#geography">Geography</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#chemistry">Chemistry</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#business">Business</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#biology">Biology</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#art">Art</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
                 <a class="nav-link" aria-current="page" href="#history">
                     <button type="button" class="btn btn-secondary">History</button>
                 </a>
@@ -52,8 +75,6 @@
                     <button type="button" class="btn btn-secondary">Art</button>
                 </a>
             </li>
-        </ul>
-	</nav>
 
 	<span class='container'>
 	    <div class='flashed'>
@@ -67,39 +88,37 @@
 	    	</div>	
 	    	{% endfor %}
 	    </div>
------------------------------------------------------------------------------------------------------------------
+		
 <!-- Religion -->	
 <h3 id="religion"><u><b><center>Religion Section</center></b></u></h3>
-<marquee id="marquee-container">
+<span id="span-container">
 	<a href="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true"><button type="button" class="btn_info" data-bs-dismiss="alert">Divinity</button></a><!-- divinity-->
-</marquee>
+</span>
 <div>
   <iframe class="pdf-container " id="pdf-container" src="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true"></iframe>	
 </div>
 <hr class="my-4">
 
 		
------------------------------------------------------------------------------------------------------------------
 <!-- Art -->	
 <h3 id="art"><u><b><center>Art Section</center></b></u></h3>
 <div>
-<marquee id="marquee-container">
+<span id="span-container">
 	<a href="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=drive_link"><button type="button" class="btn_info" data-bs-dismiss="alert">Introducing Art</button></a> <!-- introducing art-->
-</marquee>
+</span>
   <iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=drive_link"></iframe>	
 </div>
 <hr class="my-4">
 
 		
------------------------------------------------------------------------------------------------------------------
 <!-- Languages -->
 <h3 id="languages"><u><b><center>Languages Section</center></b></u></h3>
 <div>
-<marquee id="marquee-container">
+<span id="span-container">
 	<a href="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=drive_link"><button type="button" class="btn_info" data-bs-dismiss="alert">Swahili Basics</button></a> <!-- swahili-->
 	<a href="https://drive.google.com/file/d/1dg7KFLe2_k-q2HuOt2NUn-8m7iMbPX_O/view?usp=drive_link"><button type="button" class="btn_info" data-bs-dismiss="alert">French Year 1</button></a> <!-- French year1 -->
 	<a href="https://drive.google.com/file/d/1Ea_-OR6sn9IlZRh7PIUwNUWvIGXptQ0P/view?usp=drive_link"><button type="button" class="btn_info" data-bs-dismiss="alert">French Year 2</button></a> <!-- French year2 -->
-</marquee>	
+</span>	
  <!-- swahili basics--><iframe class="pdf-container " id="pdf-container" src="https://docs.google.com/document/d/e/2PACX-1vSC4ChEaymUNCDz6D_MU_8bgF2jwxVBruh98xSApaflqHsNrD_Z081v05-Amh-xBfX77ygWo2lOTvzG/pub?embedded=true"></iframe>	
 <hr class="my-4">
  <!--french year 1--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1dg7KFLe2_k-q2HuOt2NUn-8m7iMbPX_O/view?usp=drive_link"></iframe>
@@ -109,16 +128,15 @@
 </div>
 
 
------------------------------------------------------------------------------------------------------------------
 <!-- Physics -->
 <h3 id="physics"><u><b><center>Physics Section</center></b></u></h3>
 <div>
 	
-<marquee id="marquee-container">
+<span id="span-container">
 	<!--vehicle-engineering-and-maintenance--><a href="https://drive.google.com/file/d/1k0q8dQSBKZUdZncs5mIp34Q68lS3TFHW/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">Swahili Basics</button></a> <!-- swahili-->
 	<!--Cambridge Physics--><a href="https://drive.google.com/file/d/1gzWLnPz9OFD4FR8AGMDJQy5_4QUNdV4b/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">French Year 1</button></a> <!-- French year1 -->
 	<!--energy managemnet--><a href="https://drive.google.com/file/d/1DBkFQJafBuE7deVw0al_oglKeMqttM3X/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">French Year 2</button></a> <!-- French year2 -->
-</marquee>	
+</span>	
  <!-- vehicle-engineering-and-maintenance--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1k0q8dQSBKZUdZncs5mIp34Q68lS3TFHW/view?usp=sharing"></iframe>	
 <hr class="my-4">
  <!--Cambridge Physics--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1gzWLnPz9OFD4FR8AGMDJQy5_4QUNdV4b/view?usp=sharing"></iframe>
@@ -128,17 +146,16 @@
 </div>
 
 		
------------------------------------------------------------------------------------------------------------------
 <!-- mathematics -->
 <h3 id="mathematics"><u><b><center>Mathematics Section</center></b></u></h3>
 <div>
 	
-<marquee id="marquee-container">
+<span id="span-container">
 	<!--Pure math by Sadler--><a href="https://drive.google.com/file/d/1LmPSvBe8oZUMzucPy5lkNilsHWbKsVFF/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">Swahili Basics</button></a> <!-- swahili-->
 	<!--pure math yr 2--><a href="https://drive.google.com/file/d/1TZFcxLErTqHeohYMNzl5tggndHGk7iFZ/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">French Year 1</button></a> <!-- French year1 -->
 	<!--Excel--><a href="https://drive.google.com/file/d/1cHUyAJ5uLhbC9nx1YwCF6JBm3RgnIrq7/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">French Year 2</button></a> <!-- French year2 -->
 	<!--Cambridge yr 1--><a href="https://drive.google.com/file/d/1hRSAkOC5udkud67AVRvBRtFtERDBuxWc/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">Swahili Basics</button></a> <!-- swahili-->
-</marquee>	
+</span>	
  <!-- Pure math by Sadler--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1LmPSvBe8oZUMzucPy5lkNilsHWbKsVFF/view?usp=sharing"></iframe>	
 <hr class="my-4">
  <!--pure math yr 2--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1TZFcxLErTqHeohYMNzl5tggndHGk7iFZ/view?usp=sharing"></iframe>
@@ -148,8 +165,22 @@
  <!--Cambridge yr 1--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1hRSAkOC5udkud67AVRvBRtFtERDBuxWc/view?usp=sharing"></iframe>
 <hr class="my-4">
 </div>
-		
--------------------------------------------------------------------------------------------------------------------
+
+<!-- ict -->
+<h3 id="ict"><u><b><center>Information & Communication Technology</center></b></u></h3>
+<div>
+	
+<span id="span-container">
+	<!--scikit_learn_tutorial--><a href="https://drive.google.com/file/d/1HWoPLxiJ7GGTjfP8iJVcYy8fE1QMx-LK/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">Swahili Basics</button></a> <!-- swahili-->
+	<!--Ict by Graha--><a href="https://drive.google.com/file/d/1jYOU26kos4oWkdD35sQXy9Xo9XocrZfj/view?usp=sharing"><button type="button" class="btn_info" data-bs-dismiss="alert">French Year 1</button></a> <!-- French year1 -->
+</span>	
+ <!-- scikit_learn_tutorial--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1LmPSvBe8oZUMzucPy5lkNilsHWbKsVFF/view?usp=sharing"></iframe>	
+<hr class="my-4">
+ <!--Ict by Graha--><iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1TZFcxLErTqHeohYMNzl5tggndHGk7iFZ/view?usp=sharing"></iframe>
+<hr class="my-4">
+</div>		
+
+	
 	<script>
         // Disable right-click context menu
         document.addEventListener('contextmenu', function(e) {
