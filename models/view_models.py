@@ -20,8 +20,8 @@ def cleanup_online_tb():
 		                               Card_num TEXT,
 		                               Created_at TIMESTAMP
 		                               )""")
-        cur.execute("""SELECT * FROM online_tb""")
-        cur.execute(""" DELETE FROM online_tb WHERE Created_at < %s """,(relax_time,))
+        #cur.execute("""SELECT * FROM online_tb""")
+        cur.execute("""DELETE FROM online_tb WHERE Created_at > %s""", (relax_time,))
         conn.commit()
         return redirect(url_for("authorisation_bp.Authorisation"))
         flash("Session has ended.. Take time to relax.. then login back")
@@ -145,3 +145,7 @@ class CArds():
         finally:
         	pass
         	#conn.close()
+
+scheduler = BackgroundScheduler()
+scheduler.add_job(cleanup_online_tb, 'interval', minutes=1)
+scheduler.start()
