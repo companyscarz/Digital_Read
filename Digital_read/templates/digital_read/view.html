@@ -6,25 +6,22 @@
 {% block body %}
 
 <div class="dropdown fixed-top classes">
-    <button class="btn btn_info dropdown-toggle" type="button" data-toggle="dropdown">Browse Library Section
-    <span class="caret"></span></button>
+    <button class="btn btn_info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Browse Library Sections</button>
     <ul class="dropdown-menu">
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#religion">Religion Section</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#physics">Physics Section</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#mathematics">Mathematics Section</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#languages">Languages</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#ict">ICT Section</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#history">History Section</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#geography">Geography</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#chemistry">Chemistry</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#business">Business</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#biology">Biology</a></li>
-      <li><a style="color: white;" class="nav-link active" aria-current="page" href="#art">Art</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#religion">Religion Section</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#physics">Physics Section</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#mathematics">Mathematics Section</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#languages">Languages</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#ict">ICT Section</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#history">History Section</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#geography">Geography</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#chemistry">Chemistry</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#business">Business</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#biology">Biology</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="#art">Art</a></li>
     </ul>
-  </div>
 </div>
 
-<br>
 	<span class='container'>
 	    <div class='flashed'>
 	    	{% for message in get_flashed_messages() %}
@@ -37,12 +34,14 @@
 	    	</div>	
 	    	{% endfor %}
 	    </div>
+
+<br>
 		
 <!-- Religion -->	
 <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Religion Section<span class="caret"></span></button>
+    <button id="religion" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Religion Section<span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li class="dropdown-header"><a href="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true">Divinity</a></li>
+      <li><a style="color: white;" class="dropdown-item dropdown-header" href="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true">Divinity</a></li>
     </ul>
   </div>
 <!-- end of drop down-->
@@ -54,14 +53,15 @@
 		
 <!-- Art -->	
 <div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Art Section<span class="caret"></span></button>
+    <button id="art" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">Art Section<span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li class="dropdown-header"><a href="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=sharing">Introducing Art</a></li>
     </ul>
   </div>
-</div>
 <!-- end of drop down-->
+<div>
   <iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=sharing"></iframe>	
+</div>
 <hr class="my-4">
 
 		
