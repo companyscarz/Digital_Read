@@ -75,7 +75,7 @@ class CArds():
 		       
 	            #query to check if card exists but if the date created is older than 9 weeks then  should not be allowed
 	            cur.execute("""SELECT * FROM card_db """)
-	            cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Created_at > %s""", (self.card_num,nine_weeks_ago))                        
+	            cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Created_at < %s""", (self.card_num,nine_weeks_ago))                        
 		   	# query to check if the card_num exists and not check expiry
 	            expired_card = cur.fetchone()
 	            
