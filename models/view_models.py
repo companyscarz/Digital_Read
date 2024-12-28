@@ -11,8 +11,8 @@ connections = connection
 
 def cleanup_online_tb():
     try:
-        #get the session data and delete it if its 30 minutes
-        relax_time = (current_time - timedelta(minutes=2)).strftime('%Y-%m-%d %H:%M:%S') 
+        #get the session data and delete it if its 40 minutes
+        relax_time = (current_time - timedelta(minutes=40)).strftime('%Y-%m-%d %H:%M:%S') 
         conn = connections
         cur = conn.cursor()
         cur.execute(""" CREATE TABLE if not exists online_tb (
@@ -20,11 +20,10 @@ def cleanup_online_tb():
 		                               Card_num TEXT,
 		                               Created_at TIMESTAMP
 		                               )""")
-        #cur.execute("""SELECT * FROM online_tb""")
-        #cur.execute("""DELETE FROM online_tb WHERE Created_at > %s""", (relax_time,))
-        #conn.commit()
-        #webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")
-        flash("Session has ended.. Take time to relax.. then login back")
+        cur.execute("""SELECT * FROM online_tb""")
+        cur.execute("""DELETE FROM online_tb WHERE Created_at > %s""", (relax_time,))
+        conn.commit()
+        webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")
         #if there is an error in the database then flash a message
     except Exception as e:
         flash(f"⚠An Error occured{e}")
@@ -62,7 +61,7 @@ class CArds():
             	flash("This card is currently in use!")
             else:
 	            #check for objects older than 1 month + bonus week--> 5 weeks
-	            nine_weeks_ago = (current_time - timedelta(weeks=5)).strftime('%Y-%m-%d %H:%M:%S')
+	            nine_weeks_ago = (current_time - timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
 				
 	            #make connections 
 	            conn = connections
