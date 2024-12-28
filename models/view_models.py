@@ -61,7 +61,7 @@ class CArds():
             	flash("This card is currently in use!")
             else:
 	            #check for objects older than 1 month + bonus week--> 5 weeks
-	            nine_weeks_ago = (current_time - timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
+	            nine_weeks_ago = (current_time - timedelta(weeks=4)).strftime('%Y-%m-%d %H:%M:%S')
 				
 	            #make connections 
 	            conn = connections
