@@ -23,7 +23,7 @@ def cleanup_online_tb():
         cur.execute("""DELETE FROM online_tb WHERE Created_at > %s""", (relax_time,))
         conn.commit()
         webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")
-        #if there is an error in the database then flash a message
+        print("database was cleared")
     except Exception as e:
         print(f"⚠An Error occured{e}")
     finally:
