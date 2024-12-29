@@ -6,7 +6,7 @@ from models.view_models import CArds
 
 authorisation_bp = Blueprint('authorisation_bp', __name__, template_folder='templates/digital_read', static_folder='static')
 
-@view_bp.route('/')
+@authorisation_bp('/')
 @authorisation_bp.route('/authorisation', methods=['GET', 'POST'])
 def Authorisation():
     title="authorisation"
