@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from flask import flash, session, redirect, url_for
 import pg8000
 from delicate import connection
+import webbrowser
 
 current_time = datetime.utcnow()
 connections = connection
