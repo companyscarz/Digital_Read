@@ -6,10 +6,8 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 view_bp = Blueprint('view_bp', __name__, template_folder='templates/digital_read', static_folder='static')
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(cleanup_online_tb, 'interval', seconds=1)
-scheduler.start()
 
+@view_bp.route('/')
 @view_bp.route('/view')
 def View():
     title="view"
