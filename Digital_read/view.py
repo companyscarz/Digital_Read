@@ -2,7 +2,6 @@ from flask import redirect, url_for, flash, render_template, request, Blueprint,
 from models.view_models import cleanup_online_tb
 from settings import Config
 from Digital_read.card_stock import magazine_stocks, math_stocks
-from apscheduler.schedulers.background import BackgroundScheduler
 
 view_bp = Blueprint('view_bp', __name__, template_folder='templates/digital_read', static_folder='static')
 
