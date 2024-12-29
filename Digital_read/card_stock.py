@@ -1,5 +1,4 @@
 magazine_stocks = {
-'c2649dc89c5917920db24d':'486033',
 '2bb85eee0c7fa926276f19':'ac5d46',
 'e3ccf2641bbeb22abc9b05':'741aef',
 'e4b01e189a3b7dd790b9dc':'8d1ce3',
@@ -30,6 +29,7 @@ magazine_stocks = {
 '813902c074a0e7933d8a0d':'ee9a6c',
 '1658f6fc4bafcee3e5e57a':'cc3f73',
 '09b12709f693c1fc8aac7a':'a964a4',
+'c2649dc89c5917920db24d':'486033',
 'daf61740e0c7313912432c':'9943fc',
 'd2e40ec7c422217bab580b':'4c21ba',
 '82f11c116d7fe5a65594b1':'e4bb47',
