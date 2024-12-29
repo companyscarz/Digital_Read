@@ -26,7 +26,7 @@ def cleanup_online_tb():
         webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")
         #if there is an error in the database then flash a message
     except Exception as e:
-        flash(f"⚠An Error occured{e}")
+        print(f"⚠An Error occured{e}")
     finally:
         pass
 
