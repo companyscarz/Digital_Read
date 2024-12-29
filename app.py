@@ -1,6 +1,5 @@
 from flask import Flask
 from settings import Config
-from models.view_models import cleanup_online_tb
 app = Flask(__name__, static_folder='static')
 app.config.from_object(Config)
 
@@ -18,11 +17,6 @@ from Digital_read.pals import pals_bp
 app.register_blueprint(authorisation_bp)
 app.register_blueprint(view_bp)
 app.register_blueprint(pals_bp)
-
-scheduler = BackgroundScheduler()
-scheduler.add_job(cleanup_online_tb, 'interval', seconds=1)
-scheduler.start()
-
 
 
 if __name__ == '__main__':
