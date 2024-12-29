@@ -14,8 +14,9 @@ from Digital_read.authorisation import authorisation_bp
 from Digital_read.view import view_bp
 from Digital_read.pals import pals_bp
 
-app.register_blueprint(view_bp)
+
 app.register_blueprint(authorisation_bp)
+app.register_blueprint(view_bp)
 app.register_blueprint(pals_bp)
 
 if __name__ == '__main__':
