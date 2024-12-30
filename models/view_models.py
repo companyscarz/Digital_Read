@@ -53,7 +53,7 @@ class CArds():
             
             #query to check if card exists in the online table
             cur.execute("""SELECT * FROM online_tb""")
-            cur.execute("""SELECT * FROM online_tb WHERE Card_num = %s AND Card_code = %s """, (self.card_num,self.card_code,))
+            cur.execute("""SELECT * FROM online_tb WHERE Card_num = %s""", (self.card_num,))
             # query to get card if the card_num exists 
             card_online = cur.fetchone()
             if card_online:
