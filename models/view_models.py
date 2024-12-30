@@ -22,7 +22,7 @@ def cleanup_online_tb():
         cur.execute("""SELECT * FROM online_tb""")
         cur.execute("""DELETE FROM online_tb WHERE Created_at > %s""", (relax_time,))
         conn.commit()
-        webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")
+        #webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")#add should go here
         print("database was cleared")
     except Exception as e:
         print(f"⚠An Error occured{e}")
@@ -53,7 +53,7 @@ class CArds():
             
             #query to check if card exists in the online table
             cur.execute("""SELECT * FROM online_tb""")
-            cur.execute("""SELECT * FROM online_tb WHERE Card_num = %s""", (self.card_num,))
+            cur.execute("""SELECT * FROM online_tb WHERE Card_num = %s AND Card_code = %s """, (self.card_num,self.card_code,))
             # query to get card if the card_num exists 
             card_online = cur.fetchone()
             if card_online:
