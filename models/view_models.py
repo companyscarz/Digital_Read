@@ -58,7 +58,7 @@ class CArds():
             card_online = cur.fetchone()
             if card_online:
             	flash("This card is currently in use!")
-	    else:
+            else:
 	            #check for objects older than 1 month + bonus week--> 5 weeks
 	            nine_weeks_ago = (current_time - timedelta(weeks=4)).strftime('%Y-%m-%d %H:%M:%S')
 				
