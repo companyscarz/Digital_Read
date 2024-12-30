@@ -12,9 +12,6 @@ def View():
     active_cardnum = session.get('card_num')  # Extract card number from session
     active_cardcode = session.get('card_code')  # Extract card code from session
     
-    #return render_template('view.html', title=title)
-    #cleanup_online_tb()
-    
     if 'card_num' and 'card_code' in session:
     	return render_template('view.html', title=title)
     else:
