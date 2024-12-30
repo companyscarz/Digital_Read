@@ -59,8 +59,8 @@ class CArds():
             if card_online:
             	flash("This card is currently in use!")
             else:
-	            #check for objects older than 1 month + bonus week--> 5 weeks
-	            nine_weeks_ago = (current_time - timedelta(weeks=4)).strftime('%Y-%m-%d %H:%M:%S')
+	            #check for objects older than 1 month --> 5 weeks
+	            four_weeks_ago = (current_time - timedelta(weeks=4)).strftime('%Y-%m-%d %H:%M:%S')
 				
 	            #make connections 
 	            conn = connections
@@ -74,7 +74,7 @@ class CArds():
 		       
 	            #query to check if card exists but if the date created is older than 9 weeks then  should not be allowed
 	            cur.execute("""SELECT * FROM card_db """)
-	            cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Created_at < %s""", (self.card_num,nine_weeks_ago))                        
+	            cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Created_at < %s""", (self.card_num,four_weeks_ago))                        
 		   	# query to check if the card_num exists and not check expiry
 	            expired_card = cur.fetchone()
 	            
