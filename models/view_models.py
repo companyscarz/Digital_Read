@@ -56,7 +56,7 @@ class CArds():
             cur.execute("""SELECT * FROM online_tb WHERE Card_num = %s""", (self.card_num,))
             # query to get card if the card_num exists 
             card_online = cur.fetchone()
-            if card_online == True:
+            if card_online:
             	flash("This card is currently in use!")
 	    else:
 	            #check for objects older than 1 month + bonus week--> 5 weeks
