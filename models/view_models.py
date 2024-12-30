@@ -87,9 +87,7 @@ class CArds():
 	            	cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Card_code = %s""", (self.card_num, self.card_code))
 	            	valid_card = cur.fetchone()     	
 		            #when card is registered then save in session, continue to view page then save on online_tb
-	            	if valid_card: # when a result is found 
-		            	session['card_num']=self.card_num
-		            	session['card_code']=self.card_code
+	            	if valid_card: # when a result is found
 		            	#after saving on session then add the card_num to online_tb and continue to view page
 		            	cur.execute(""" CREATE TABLE if not exists online_tb (
 			                               Id SERIAL PRIMARY KEY,
@@ -99,7 +97,10 @@ class CArds():
 		            	data = [self.card_num, self.created_at]
 		            	cur.execute(""" 
 			                                	INSERT INTO online_tb(Card_num,Created_at) VALUES(%s,%s)
-			            				""", data)
+			            				""", data) 
+		            	session['card_num']=self.card_num
+		            	session['card_code']=self.card_code
+				
 		            	flash("Welcome back to Digital read")
 		            	return redirect(url_for("view_bp.View"))
 		            #if card is not registered then save it on cards data base and continue to view page
@@ -117,8 +118,6 @@ class CArds():
 			            				""", data)
 			            				
 			        #add the card on the online table and save on session
-		            	session['card_num']=self.card_num
-		            	session['card_code']=self.card_code
 		            	#after saving on session then add the card_num to online_tb
 		            	cur.execute(""" CREATE TABLE if not exists online_tb (
 			                               Id SERIAL PRIMARY KEY,
@@ -129,7 +128,9 @@ class CArds():
 		            	cur.execute(""" 
 			                                	INSERT INTO online_tb(Card_num, Created_at) VALUES(%s,%s)
 			            				""", data) 
-			            				
+		            	session['card_num']=self.card_num
+		            	session['card_code']=self.card_code
+			
 		            	flash("Enjoy your say on Digital read.")
 		            	return redirect(url_for("view_bp.View"))
 		            	#welcome the user          		
