@@ -23,5 +23,5 @@ def Authorisation():
     	#if not in db then it adds on the cards db and then adds the card to online table and saves the card and password on session
     	#return redirect(url_for('view_bp.View'))
     else:
-    	return render_template('authorisation.html', title=title, form=form)
     	flash('Please fill in the fields correctly!!')
+    	return render_template('authorisation.html', title=title, form=form)
