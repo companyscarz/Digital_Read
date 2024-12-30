@@ -56,9 +56,9 @@ class CArds():
             cur.execute("""SELECT * FROM online_tb WHERE Card_num = %s""", (self.card_num,))
             # query to get card if the card_num exists 
             card_online = cur.fetchone()
-            if card_online:
+            if card_online == True:
             	flash("This card is currently in use!")
-            else:
+	    elif card_online == False:
 	            #check for objects older than 1 month + bonus week--> 5 weeks
 	            nine_weeks_ago = (current_time - timedelta(weeks=4)).strftime('%Y-%m-%d %H:%M:%S')
 				
@@ -135,10 +135,13 @@ class CArds():
 		            	#welcome the user          		
 			        #commit and save the changes and save changes
        							         
-            conn.commit()  
+            conn.commit()
+	    
+	    else:
+		pass
 		            #if there is an error in the database then flash a message
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
         finally:
         	pass
-
+	    
