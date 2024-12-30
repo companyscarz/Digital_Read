@@ -18,5 +18,5 @@ def View():
     if 'card_num' and 'card_code' in session:
     	return render_template('view.html', title=title)
     else:
-    	flash('🚫Please login!!')
+    	#flash('🚫Please login!!')
     	return redirect(url_for('authorisation_bp.Authorisation'))
