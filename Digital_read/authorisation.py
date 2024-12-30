@@ -15,7 +15,7 @@ def Authorisation():
         #if form.card_number.data in magazine_stocks and magazine_stocks[form.card_number.data]== form.password.data:
     	data = CArds(form.card_number.data, form.password.data, current_time)
     	data.Look_up()
-        return redirect(url_for("view_bp.View")
+    	return redirect(url_for("view_bp.View")
     else:
     	flash('Please fill in the fields correctly!!')
     	return render_template('authorisation.html', title=title, form=form)
