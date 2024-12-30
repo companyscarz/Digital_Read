@@ -58,7 +58,7 @@ class CArds():
             card_online = cur.fetchone()
             if card_online == True:
             	flash("This card is currently in use!")
-	    elif card_online == False:
+	    else:
 	            #check for objects older than 1 month + bonus week--> 5 weeks
 	            nine_weeks_ago = (current_time - timedelta(weeks=4)).strftime('%Y-%m-%d %H:%M:%S')
 				
@@ -137,8 +137,6 @@ class CArds():
        							         
             conn.commit()
 	    
-	    else:
-		pass
 		            #if there is an error in the database then flash a message
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
