@@ -17,7 +17,7 @@ def Authorisation():
     	#then check if card is on online_tb so that only one person can use it
     	# then continue to look for... 
     	data = CArds(form.card_number.data, form.password.data, current_time)
-    	data.Look_up()
+    	return (data.Look_up())
     	#the Look_up function checks if the card number is in the database 
     	#if true then saves the card number and password as sesions and adds the card to online table
     	#if not in db then it adds on the cards db and then adds the card to online table and saves the card and password on session
