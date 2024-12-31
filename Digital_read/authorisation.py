@@ -23,5 +23,5 @@ def Authorisation():
             flash("Unknown card!")
             return render_template('authorisation.html', title=title, form=form)
     else:
-    	flash('Please check your details!!')
-    	return render_template('authorisation.html', title=title, form=form)
+    	pass
+    	#return render_template('authorisation.html', title=title, form=form)
