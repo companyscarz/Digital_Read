@@ -23,5 +23,5 @@ def Authorisation():
             flash("Unknown card!")
             return render_template('authorisation.html', title=title, form=form)
     else:
-    	#pass
-    	return redirect (url_for("view_bp.View"))
+    	pass
+    	#return redirect (url_for("view_bp.View"))
