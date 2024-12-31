@@ -1,4 +1,4 @@
-3from flask import redirect, url_for, flash, render_template, request, Blueprint, session
+from flask import redirect, url_for, flash, render_template, request, Blueprint, session
 from Digital_read.forms import Verification 
 from datetime import datetime
 from Digital_read.card_stock import magazine_stocks, math_stocks
