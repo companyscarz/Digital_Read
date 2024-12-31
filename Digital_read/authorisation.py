@@ -17,8 +17,8 @@ def Authorisation():
     if form.validate_on_submit():
         if form.card_number.data in magazine_stocks and magazine_stocks[form.card_number.data]== form.password.data:
             data = CArds(form.card_number.data, form.password.data, current_time)
-            data.Look_up()
-            return redirect(url_for("view_bp.View"))
+            return data.Look_up()
+            #return redirect(url_for("view_bp.View"))
         else:
             flash("Unknown card!")
             return render_template('authorisation.html', title=title, form=form)
