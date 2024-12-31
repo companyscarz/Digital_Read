@@ -10,7 +10,7 @@ view_bp = Blueprint('view_bp', __name__, template_folder='templates/digital_read
 def View():
     active_cardnum = session.get('card_num')  # Extract card number from session
     active_cardcode = session.get('card_code')  # Extract card code from session
-    title=(f"view/{active_cardnum}")
+    title=("view")
     
     if 'card_num' and 'card_code' in session:
     	return render_template('view.html', title=title)
