@@ -10,8 +10,8 @@ link = '🐒 Enter a valid link!!'
 file_error = '📁This file format cannot be accepted!'
 
 class Verification(FlaskForm):
-	card_number = StringField('Card_number', validators=[DataRequired(entry)])
-	password = PasswordField('Verification Code', validators=[DataRequired(entry)])
+	card_number = StringField('Card_number')
+	password = PasswordField('Verification Code')
 	submit = SubmitField('Grant Access!')
 	
 class Pals_Form(FlaskForm):
