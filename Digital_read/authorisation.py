@@ -1,4 +1,4 @@
-from flask import redirect, url_for, flash, render_template, request, Blueprint, session
+3from flask import redirect, url_for, flash, render_template, request, Blueprint, session
 from Digital_read.forms import Verification 
 from datetime import datetime
 from Digital_read.card_stock import magazine_stocks, math_stocks
@@ -23,5 +23,5 @@ def Authorisation():
             flash("Unknown card!")
             return render_template('authorisation.html', title=title, form=form)
     else:
-    	pass
-    	#return render_template('authorisation.html', title=title, form=form)
+    	#pass
+    	return redirect (url_for("view_bp.Viewx"))
