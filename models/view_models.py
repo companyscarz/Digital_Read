@@ -117,8 +117,10 @@ class CArds():
 			                                	INSERT INTO card_db(Card_num, Card_code, created_at) VALUES(%s,%s,%s)
 			            				""", data)
 		            	conn.commit()
-		            	return redirect(url_for('view_bp.View'))
+		            	session['card_num']=self.card_num
+		            	session['card_code']=self.card_code
 		            	flash("Your key has been activated successfull.")
+		            	return redirect(url_for('view_bp.View'))
 				
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
