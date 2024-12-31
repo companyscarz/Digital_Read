@@ -23,7 +23,7 @@ app.register_blueprint(view_bp)
 app.register_blueprint(pals_bp)
 
 scheduler = BackgroundScheduler()
-scheduler.add_job(cleanup_online_tb, 'interval', minutes=10)
+scheduler.add_job(cleanup_online_tb, 'interval', minutes=5)
 scheduler.start()
 
 if __name__ == '__main__':
