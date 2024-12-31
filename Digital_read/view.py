@@ -5,7 +5,6 @@ from settings import Config
 view_bp = Blueprint('view_bp', __name__, template_folder='templates/digital_read', static_folder='static')
 
 
-@view_bp.route('/')
 @view_bp.route('/view')
 def View():
     active_cardnum = session.get('card_num')  # Extract card number from session
