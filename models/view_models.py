@@ -118,7 +118,7 @@ class CArds():
 			            				""", data)
 		            	conn.commit()
 		            	return redirect(url_for('authorisation_bp.Authorisation'))
-		            	flash("Your card has been activated successfull.")
+		            	flash("Your key has been activated successfull.")
 				
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
