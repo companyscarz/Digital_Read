@@ -102,7 +102,7 @@ class CArds():
 		            	session['card_code']=self.card_code
 				
 		            	flash("Welcome back to Digital read")
-		            	return redirect(url_for("view_bp.View"))
+		            	#return redirect(url_for("view_bp.View"))
 		            #if card is not registered then save it on cards data base and online db and save to session and continue to view page
 	            	else: 
 		            	cur.execute(""" CREATE TABLE if not exists card_db (
