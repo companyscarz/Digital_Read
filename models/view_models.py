@@ -19,7 +19,7 @@ def cleanup_online_tb():
 		                               Card_num TEXT,
 		                               Created_at TIMESTAMP
 		                               )""")
-        cur.execute("""SELECT * FROM online_tb""")
+        #cur.execute("""SELECT * FROM online_tb""")
         cur.execute("""DELETE FROM online_tb WHERE Created_at > %s""", (relax_time,))
         conn.commit()
         #webbrowser.open_new_tab("https://digital-library-efaeaea2dad4.herokuapp.com/authorisation")#add should go here
@@ -73,7 +73,7 @@ class CArds():
 		                               )""")
 		       
 	            #query to check if card exists but if the date created is older than 9 weeks then  should not be allowed
-	            cur.execute("""SELECT * FROM card_db """)
+	            #cur.execute("""SELECT * FROM card_db """)
 	            cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Created_at < %s""", (self.card_num,four_weeks_ago))                        
 		   	# query to check if the card_num exists and not check expiry
 	            expired_card = cur.fetchone()
@@ -83,7 +83,7 @@ class CArds():
 	            	flash("Sorry, this card is expired!")
 	            else:
 	            	# Check if the card is valid (not expired)
-	            	cur.execute("""SELECT * FROM card_db """)
+	            	#cur.execute("""SELECT * FROM card_db """)
 	            	cur.execute("""SELECT * FROM card_db WHERE Card_num = %s AND Card_code = %s""", (self.card_num, self.card_code))
 	            	valid_card = cur.fetchone()     	
 		            #when card is registered then save in session, continue to view page then save on online_tb
