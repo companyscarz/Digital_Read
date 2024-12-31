@@ -24,4 +24,4 @@ def Authorisation():
             return render_template('authorisation.html', title=title, form=form)
     else:
     	#pass
-    	return redirect (url_for("view_bp.Viewx"))
+    	return redirect (url_for("view_bp.View"))
