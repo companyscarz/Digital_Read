@@ -116,32 +116,9 @@ class CArds():
 		            	cur.execute(""" 
 			                                	INSERT INTO card_db(Card_num, Card_code, created_at) VALUES(%s,%s,%s)
 			            				""", data)
-				
 			        conn.commit() 
+				flash("Your card has been activated successfull. /n You can now login")
 				
-		            	session['card_num']=self.card_num
-		            	session['card_code']=self.card_code
-				
-			        #add the card on the online table and save on session
-		            	#after saving on session then add the card_num to online_tb
-		            	cur.execute(""" CREATE TABLE if not exists online_tb (
-			                               Id SERIAL PRIMARY KEY,
-			                               Card_num TEXT,
-			                               Created_at TIMESTAMP
-			                               )""")
-		            	data = [self.card_num, self.created_at]
-		            	cur.execute(""" 
-			                                	INSERT INTO online_tb(Card_num, Created_at) VALUES(%s,%s)
-			            				""", data)
-			        conn.commit() 
-			
-		            	flash("Enjoy your say on Digital read.")
-		            	return redirect(url_for("view_bp.View"))
-		            	#welcome the user          		
-			        #commit and save the changes and save changes
-       							         
-	    
-		            #if there is an error in the database then flash a message
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
         finally:
