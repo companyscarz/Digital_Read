@@ -117,7 +117,8 @@ class CArds():
 			                                	INSERT INTO card_db(Card_num, Card_code, created_at) VALUES(%s,%s,%s)
 			            				""", data)
 		            	conn.commit()
-		            	flash("Your card has been activated successfull. /n You can now login")
+		            	return redirect(url_for('authorisation_bp.Authorisation'))
+		            	flash("Your card has been activated successfull.")
 				
         except Exception as e:
         	flash(f"⚠An Error occured{e}")
