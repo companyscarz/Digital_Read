@@ -29,6 +29,20 @@
 		    </div>
 		  </div>
     </header>
+
+<span class='container'>
+	    <div class='flashed'>
+	    	{% for message in get_flashed_messages() %}
+	    	<div class="alert alert-info alert-dismissible fade show typing-animation" role="alert">
+	    		<p class="typing-animation">
+	    			{{message}}
+	    		</p>
+	    	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+	    	</button>
+	    	</div>	
+	    	{% endfor %}
+	    </div>
+
 	
 	<div class="digital_read_form content-section" id="home">
 		<div class="form-container" style="align:right;">
@@ -51,21 +65,7 @@
 		</div>
     </div>
 	</div>
-
-
-	<span class='container'>
-	    <div class='flashed'>
-	    	{% for message in get_flashed_messages() %}
-	    	<div class="alert alert-info alert-dismissible fade show typing-animation" role="alert">
-	    		<p class="typing-animation">
-	    			{{message}}
-	    		</p>
-	    	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-	    	</button>
-	    	</div>	
-	    	{% endfor %}
-	    </div>
-
+	
 	<div id="art">
 	<!-- Trigger the modal with a button -->
 	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalart">Art Section</button>
