@@ -26,15 +26,28 @@
         <h2>Please login </h2>
         <form>
             <div class="form-group">
-                <label for="card number">card number</label>
-                <input type="text" class="form-control" id="name" placeholder="card number">
+		{{ form.hidden_tag() }}
+		{{form.card_number.label(class="form-label")}}
+		{{form.card_number(class="form-control", id="name")}}
+			
+		<!--get the pals_name and pals_image that the user will be using for the current
+			session and also will these will be used in the pals and store them in a session-->
+		{% if form.card_number.errors %}
+		    {% for error in form.card_number.errors %}
+		        <p class="fw-lighter">{{error}}</p>
+		    {% endfor %}
+		{% endif %}
             </div>
             <div class="form-group">
-                <label for="card code">card code</label>
-                <input type="text" class="form-control" id="name" placeholder="card code">
+		{{form.password.label(class="form-label")}}
+		{{form.password(class="form-control", id="name")}}
+		{% if form.password.errors %}
+		    {% for error in form.password.errors %}
+		        <p class="fw-lighter">{{error}}</p>
+		    {% endfor %}
+		{% endif %}
             </div>
 		{{form.submit(class="btn")}}
-            <button type="submit" class="btn">Submit</button>
         </form>
     </div>
 </div>
