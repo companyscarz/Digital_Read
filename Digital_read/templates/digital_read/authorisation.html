@@ -12,6 +12,17 @@
     </header>
 	<div class="digital_read_form content-section" id="home">
 		<div class="form-container" style="align:right;">
+			<div class='flashed container'>
+		    		{% for message in get_flashed_messages() %}
+		    		<div class="alert alert-danger alert-dismissible fade show typing-animation" role="alert">
+		    			<p class="typing-animation">
+		    				{{message}}
+		    			</p>
+		    	  	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+		    		</button>
+		    		</div>	
+		    		{% endfor %}
+		    	</div>
         <h2>Please login </h2>
         <form>
             <div class="form-group">
