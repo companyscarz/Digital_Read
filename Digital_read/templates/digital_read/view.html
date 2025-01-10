@@ -5,22 +5,57 @@
 
 {% block body %}
 
-<div class="dropdown fixed-top">
-<button class="btn btn_info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Library Sections</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#religion">Religion Section</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#physics">Physics Section</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#mathematics">Mathematics Section</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#languages">Languages</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#ict">ICT Section</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#history">History Section</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#geography">Geography</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#chemistry">Chemistry</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#business">Business</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#biology">Biology</a></li>
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="#art">Art</a></li>
-    </ul>
-</div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Read</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock head %}
+
+{% block body %}
+
+    <header class="header" id="home">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		    <!-- Wrapper for slides -->
+		    <div class="carousel-inner">
+		      <div class="item active text-center">
+		        <img src="https://github.com/companyscarz/images/blob/main/digital_read.png?raw=true" alt="..." class="rounded" style="width:100%;">
+		      </div>
+		      <div class="item text-center">
+		        <img src="https://github.com/companyscarz/images/blob/main/image16.jpeg?raw=true" alt="..." class="rounded" style="width:100%;">
+		      </div>
+		      <div class="item text-center">
+		        <img src="https://github.com/companyscarz/images/blob/main/image13.jpeg?raw=true" alt="..." class="rounded" style="width:100%;">
+		      </div>
+		    </div>
+		  </div>
+    </header>
+	
+	<div class="digital_read_form content-section" id="home">
+		<div class="form-container" style="align:right;">
+        <div class="container">
+		  <h2>Library Sections</h2>
+		  <p class="small">Select your section of interest.</p>
+		  <ul class="list-inline">
+		      <li><a data-toggle="tooltip" data-placement="religion" title="religion" href="#religion">Religion</a></li>
+		      <li><a data-toggle="tooltip" data-placement="physics" title="physics" href="#physics">Physics</a></li>
+		      <li><a data-toggle="tooltip" data-placement="mathematics" title="mathematics" href="#mathematics">Mathematics</a></li>
+		      <li><a data-toggle="tooltip" data-placement="languages" title="languages" href="#languages">Languages</a></li>
+		      <li><a data-toggle="tooltip" data-placement="ict" title="ict" href="#ict">ICT</a></li>
+		      <li><a data-toggle="tooltip" data-placement="history" title="history" href="#history">History</a></li>
+		      <li><a data-toggle="tooltip" data-placement="geography" title="geography" href="#geography">Geography</a></li>
+		      <li><a data-toggle="tooltip" data-placement="chemistry" title="chemistry" href="#chemistry">Chemistry</a></li>
+		      <li><a data-toggle="tooltip" data-placement="business" title="business" href="#business">Business</a></li>
+		      <li><a data-toggle="tooltip" data-placement="biology" title="biology" href="#biology">Biology</a></li>
+		      <li><a data-toggle="tooltip" data-placement="art" title="art" href="#art">Art</a></li>
+		  </ul>
+		</div>
+    </div>
+	</div>
+
 
 	<span class='container'>
 	    <div class='flashed'>
@@ -35,186 +70,336 @@
 	    	{% endfor %}
 	    </div>
 
-<br>
-		
-<!-- art -->	
-<div id="art" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Art Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: black;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=sharing">Art</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=sharing"></iframe>	
-</div>
-<hr class="my-4">
+	<div id="art">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalart">Art Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalart" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Art Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+				<ul>
+	      			<li><a href="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=sharing">Glencoe introducing Art</a></li>
+	        	</ul>
+			</div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+			<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/18d6CmwGKuSVtM_bnM0UlpR1FV-xBwO8A/view?usp=sharing"></iframe>
+		</div>
+	</div>
+	
+	
+	<div id="biology">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalbiology">Biology Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalbiology" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Biology Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+				<ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/14-hgfdnnk7NeLy-d9QKT9--fpFrhC7lN/view?usp=sharing">Advanced Biology by Micheal Kent</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/169bVHh7Dl4nm7q1MDiXcR5NNrC-8GC-E/view?usp=sharing">Advanced Biology Principles and Applications</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Uqi9wijwg_5VB7lShpAX9rr5hFLfNYVi/view?usp=sharing">Biology Year 1</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1XXdacecGcLq2GfPuaJc9Tn51Xz0Pkxq-/view?usp=sharing">Biology Year 1</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1xnqp0Zh4O8s8kC5LdSLZcDpBvh6EeBO7/view?usp=sharing">Function Approach</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1obzBWT7rum3jv2O2OvOU6N_Y4ST1Bs27/view?usp=sharing">New Understanding Biology For Alevel</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+	  		<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1-2mc5wiYm4yz3vDXD52htUMuyhl-0kCm/view?usp=sharing"></iframe>
+		</div>
+	</div>
+	
+	
+	<div id="chemistry">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalchemistry">Chemistry Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalchemistry" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Chemistry Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1TEgS9OuyPFPLqPdrAyGZYZF4TzNEFKfx/view?usp=sharing">Cambridge International AS & ALevel Chemistry 9701</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1XoxSoPYVc-iylKdEqDR39Mumooj_G_7d/view?usp=sharing">Cambridge International AS & ALevel Chemistry hughes</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Cqd6ccZuWY-FY11mngYzCz-RCwCNtXEU/view?usp=sharing">Chemistry Year 1</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Fp5sE0zJGqX8IiLejoD5FXk1ajTz-DV2/view?usp=sharing">Chemistry Year 2</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+	  		<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1TEgS9OuyPFPLqPdrAyGZYZF4TzNEFKfx/view?usp=sharing"></iframe>
+		</div>	
+	</div>
+			
+	<!-- geography -->
+	<div id="geography">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalgeo">Geography Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalgeo" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Geography Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1S9fTHsUBbeHbsjLltneSKdrWJsbKfqku/view?usp=sharing">Cambridge International as & alevel geography</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+			<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1S9fTHsUBbeHbsjLltneSKdrWJsbKfqku/view?usp=sharing"></iframe>
+		</div>
+	</div>
+			
+	<!-- history -->	
+	<div id="history">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalhis">History Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalhis" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>History Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1wgEc-QwpFZKUvnh8ExwGa9QjkvEzUgHX/view?usp=sharing">Napoleon Hill Law of Success</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+			<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1wgEc-QwpFZKUvnh8ExwGa9QjkvEzUgHX/view?usp=sharing"></iframe>
+		</div>
+	</div>
+	
+			
+	<!-- ict -->
+	<div id="ict">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalict">ICT Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalict" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>ICT Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+	      			<li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1jYOU26kos4oWkdD35sQXy9Xo9XocrZfj/view?usp=sharing">ICT by Graham Brown</a></li>
+	      			<li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1HWoPLxiJ7GGTjfP8iJVcYy8fE1QMx-LK/view?usp=sharing">Sckit learn</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+			<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1jYOU26kos4oWkdD35sQXy9Xo9XocrZfj/view?usp=sharing"></iframe>
+		</div>
+	</div>
+	
+			
+	<!-- languages -->	
+	<div id="languages">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModallanguages">Languages Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModallanguages" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Languages Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1dg7KFLe2_k-q2HuOt2NUn-8m7iMbPX_O/view?usp=sharing">French Year 1</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Ea_-OR6sn9IlZRh7PIUwNUWvIGXptQ0P/view?usp=sharing">French Year 2</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://docs.google.com/document/d/e/2PACX-1vSC4ChEaymUNCDz6D_MU_8bgF2jwxVBruh98xSApaflqHsNrD_Z081v05-Amh-xBfX77ygWo2lOTvzG/pub?embedded=true">Swahili Basics</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+			<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1jYOU26kos4oWkdD35sQXy9Xo9XocrZfj/view?usp=sharing"></iframe>
+		</div>
+	</div>
+	
+			
+	<!-- mathematics -->	
+	<div id="mathematics">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalmathematics">Mathematics Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalmathematics" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Mathematics Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1hRSAkOC5udkud67AVRvBRtFtERDBuxWc/view?usp=sharing">Cambridge as & alevel pure math</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1cHUyAJ5uLhbC9nx1YwCF6JBm3RgnIrq7/view?usp=sharing">Excel in Math without tears</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1TZFcxLErTqHeohYMNzl5tggndHGk7iFZ/view?usp=sharing">Maths Year 2</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1LmPSvBe8oZUMzucPy5lkNilsHWbKsVFF/view?usp=sharing">Understanding Pure Mathematics by A J sadler</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+			<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1hRSAkOC5udkud67AVRvBRtFtERDBuxWc/view?usp=sharing"></iframe>
+		</div>
+	</div>
+	
+			
+	<!-- physics -->
+	<div id="physics">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalphysics">Physics Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalphysics" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Physics Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1DBkFQJafBuE7deVw0al_oglKeMqttM3X/view?usp=sharing">bsr energy management</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1gzWLnPz9OFD4FR8AGMDJQy5_4QUNdV4b/view?usp=sharing">Cambridge International as & alevel Physics course book</a></li>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1k0q8dQSBKZUdZncs5mIp34Q68lS3TFHW/view?usp=sharing">Vehicel engineering and management </a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+		<div>
+			<iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1DBkFQJafBuE7deVw0al_oglKeMqttM3X/view?usp=sharing"></iframe>
+		</div>
+	</div>
+	
+	<!-- religion -->
+	<div id="religion">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalreligion">Religion Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalreligion" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Religion Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true">Divinity</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	<div>
+		<iframe class="pdf-container" id="pdf-container" src="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true"></iframe>
+	</div>
+	</div>
+	
+	
+	<!-- business -->
+	<div id="business">
+	<!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalbusiness">Business Section</button>
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModalbusiness" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h4 class="modal-title">Available books in <b>Business Section</b></h4>
+	          <button type="button" class="close" data-dismiss="modal">&times;</button>
+	        </div>
+	        <div class="modal-body">
+			    <ul>
+			      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1-2mc5wiYm4yz3vDXD52htUMuyhl-0kCm/view?usp=sharingreligion">Cambridge Internation as and a level business</a></li>
+	  	    	  <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1OPwWL3FwZhpkcJjmPd3pMbPdUnpRBuJ2/view?usp=sharing">Economics Year 1</a></li>
+			    </ul>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	<div>
+	  <iframe class="pdf-container" id="pdf-container" src="https://drive.google.com/file/d/1OPwWL3FwZhpkcJjmPd3pMbPdUnpRBuJ2/view?usp=sharing"></iframe>
+	</div>
+	</div>
 
 		
-<!-- biology -->	
-<div id="biology" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Biology Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/14-hgfdnnk7NeLy-d9QKT9--fpFrhC7lN/view?usp=sharing">Advanced Biology by Micheal Kent</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/169bVHh7Dl4nm7q1MDiXcR5NNrC-8GC-E/view?usp=sharing">Advanced Biology Principles and Applications</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Uqi9wijwg_5VB7lShpAX9rr5hFLfNYVi/view?usp=sharing">Biology Year 1</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1XXdacecGcLq2GfPuaJc9Tn51Xz0Pkxq-/view?usp=sharing">Biology Year 1</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1xnqp0Zh4O8s8kC5LdSLZcDpBvh6EeBO7/view?usp=sharing">Function Approach</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1obzBWT7rum3jv2O2OvOU6N_Y4ST1Bs27/view?usp=sharing">New Understanding Biology For Alevel</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/14-hgfdnnk7NeLy-d9QKT9--fpFrhC7lN/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/169bVHh7Dl4nm7q1MDiXcR5NNrC-8GC-E/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1Uqi9wijwg_5VB7lShpAX9rr5hFLfNYVi/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1XXdacecGcLq2GfPuaJc9Tn51Xz0Pkxq-/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1xnqp0Zh4O8s8kC5LdSLZcDpBvh6EeBO7/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1obzBWT7rum3jv2O2OvOU6N_Y4ST1Bs27/view?usp=sharing"></iframe>
-</div>
-<hr class="my-4">
-		
-<!-- business -->	
-<div id="business" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Business Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1-2mc5wiYm4yz3vDXD52htUMuyhl-0kCm/view?usp=sharingreligion">Cambridge Internation as and a level business</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1OPwWL3FwZhpkcJjmPd3pMbPdUnpRBuJ2/view?usp=sharing">Economics Year 1</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1-2mc5wiYm4yz3vDXD52htUMuyhl-0kCm/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1OPwWL3FwZhpkcJjmPd3pMbPdUnpRBuJ2/view?usp=sharing"></iframe>
-</div>
-<hr class="my-4">
-
-<!-- chemistry -->	
-<div id="chemistry" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Chemistry Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1TEgS9OuyPFPLqPdrAyGZYZF4TzNEFKfx/view?usp=sharing">Cambridge International AS & ALevel Chemistry 9701</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1XoxSoPYVc-iylKdEqDR39Mumooj_G_7d/view?usp=sharing">Cambridge International AS & ALevel Chemistry hughes</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Cqd6ccZuWY-FY11mngYzCz-RCwCNtXEU/view?usp=sharing">Chemistry Year 1</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Fp5sE0zJGqX8IiLejoD5FXk1ajTz-DV2/view?usp=sharing">Chemistry Year 2</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1TEgS9OuyPFPLqPdrAyGZYZF4TzNEFKfx/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1XoxSoPYVc-iylKdEqDR39Mumooj_G_7d/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1Cqd6ccZuWY-FY11mngYzCz-RCwCNtXEU/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1Fp5sE0zJGqX8IiLejoD5FXk1ajTz-DV2/view?usp=sharing"></iframe>	
-</div>
-<hr class="my-4"> 
-
-		
-<!-- geography -->	
-<div id="geography" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Geography Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1S9fTHsUBbeHbsjLltneSKdrWJsbKfqku/view?usp=sharing">Cambridge International as & alevel geography</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1S9fTHsUBbeHbsjLltneSKdrWJsbKfqku/view?usp=sharing"></iframe>
-</div>
-<hr class="my-4">
-
-<!-- history -->	
-<div id="history"class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">History Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1wgEc-QwpFZKUvnh8ExwGa9QjkvEzUgHX/view?usp=sharing">Napoleon Hill Law of Success</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1wgEc-QwpFZKUvnh8ExwGa9QjkvEzUgHX/view?usp=sharing"></iframe>	
-</div>
-<hr class="my-4">
-
-<!-- ict -->	
-<div id="ict" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">ICT Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1jYOU26kos4oWkdD35sQXy9Xo9XocrZfj/view?usp=sharing">ICT by Graham Brown</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1HWoPLxiJ7GGTjfP8iJVcYy8fE1QMx-LK/view?usp=sharing">Sckit learn</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1jYOU26kos4oWkdD35sQXy9Xo9XocrZfj/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1HWoPLxiJ7GGTjfP8iJVcYy8fE1QMx-LK/view?usp=sharing"></iframe>	
-</div>
-<hr class="my-4">
-
-<!-- languages -->	
-<div id="languages" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Languages Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1dg7KFLe2_k-q2HuOt2NUn-8m7iMbPX_O/view?usp=sharing">French Year 1</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1Ea_-OR6sn9IlZRh7PIUwNUWvIGXptQ0P/view?usp=sharing">French Year 2</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://docs.google.com/document/d/e/2PACX-1vSC4ChEaymUNCDz6D_MU_8bgF2jwxVBruh98xSApaflqHsNrD_Z081v05-Amh-xBfX77ygWo2lOTvzG/pub?embedded=true">Swahili Basics</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1dg7KFLe2_k-q2HuOt2NUn-8m7iMbPX_O/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1Ea_-OR6sn9IlZRh7PIUwNUWvIGXptQ0P/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://docs.google.com/document/d/e/2PACX-1vSC4ChEaymUNCDz6D_MU_8bgF2jwxVBruh98xSApaflqHsNrD_Z081v05-Amh-xBfX77ygWo2lOTvzG/pub?embedded=true"></iframe>
-</div>
-<hr class="my-4">
-
-<!-- mathematics -->	
-<div id="mathematics" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Mathematics Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1hRSAkOC5udkud67AVRvBRtFtERDBuxWc/view?usp=sharing">Cambridge as & alevel pure math</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1cHUyAJ5uLhbC9nx1YwCF6JBm3RgnIrq7/view?usp=sharing">Excel in Math without tears</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1TZFcxLErTqHeohYMNzl5tggndHGk7iFZ/view?usp=sharing">Maths Year 2</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1LmPSvBe8oZUMzucPy5lkNilsHWbKsVFF/view?usp=sharing">Understanding Pure Mathematics by A J sadler</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1hRSAkOC5udkud67AVRvBRtFtERDBuxWc/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1cHUyAJ5uLhbC9nx1YwCF6JBm3RgnIrq7/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1TZFcxLErTqHeohYMNzl5tggndHGk7iFZ/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1LmPSvBe8oZUMzucPy5lkNilsHWbKsVFF/view?usp=sharing"></iframe>	
-</div>
-<hr class="my-4">
-
-<!-- physics -->	
-<div id="physics" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Physics Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1DBkFQJafBuE7deVw0al_oglKeMqttM3X/view?usp=sharing">bsr energy management</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1gzWLnPz9OFD4FR8AGMDJQy5_4QUNdV4b/view?usp=sharing">Cambridge International as & alevel Physics course book</a></li>
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://drive.google.com/file/d/1k0q8dQSBKZUdZncs5mIp34Q68lS3TFHW/view?usp=sharing">Vehicel engineering and management </a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1DBkFQJafBuE7deVw0al_oglKeMqttM3X/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1gzWLnPz9OFD4FR8AGMDJQy5_4QUNdV4b/view?usp=sharing"></iframe>
-  <iframe class="pdf-container " id="pdf-container" src="https://drive.google.com/file/d/1k0q8dQSBKZUdZncs5mIp34Q68lS3TFHW/view?usp=sharing"></iframe>
-</div>
-<hr class="my-4">
-
-<!-- Religion -->	
-<div id="religion" class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle justify-content-end" type="button" data-bs-toggle="dropdown" aria-expanded="false">Religion Section</button>
-    <ul class="dropdown-menu">
-      <li><a style="color: gray;" class="dropdown-item dropdown-header" href="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true">Divinity</a></li>
-    </ul>
-</div>
-<!-- end of drop down-->
-<div>
-  <iframe class="pdf-container " id="pdf-container" src="https://docs.google.com/document/d/e/2PACX-1vSmbxTyuxfL8aNEEf_RdFx3eRpDUdXKjc13K5NDS7V53q_U31nprF1qa1amm_Y6qRD6SJuSKs2SeKxH/pub?embedded=true"></iframe>	
-</div>
-<hr class="my-4">
 	
 	<script>
         // Disable right-click context menu
@@ -234,6 +419,8 @@
             }
         });
     </script>
-
-
+	
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 {% endblock body %}
